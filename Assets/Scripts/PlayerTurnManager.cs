@@ -11,7 +11,25 @@ public class PlayerTurnManager : MonoBehaviour
     //System.Timers.Timer timerP1 = new System.Timers.Timer();
     //System.Timers.Timer timerP2 = new System.Timers.Timer();
 
-    [SerializeField] private float gameTimer = 0;
+    private bool pausedPlayer1 = false;
+    private bool pausedPlayer2 = false;
+
+    [SerializeField] private GameObject panelPlayer1UI;
+    [SerializeField] private GameObject panelPlayer2UI;
+
+    public GameObject PanelPlayer1UI
+    {
+        get => panelPlayer1UI;
+        set => panelPlayer1UI = value;
+    }
+
+    public GameObject PanelPlayer2UI
+    {
+        get => panelPlayer2UI;
+        set => panelPlayer2UI = value;
+    }
+
+    [SerializeField] private float playerTurnTimer = 0;
 
     enum State
     {
@@ -25,7 +43,7 @@ public class PlayerTurnManager : MonoBehaviour
 
     void Start()
     {
-        gameTimer = 0;
+        playerTurnTimer = 0;
     }
 
     void Update()
@@ -34,14 +52,46 @@ public class PlayerTurnManager : MonoBehaviour
         {
             case State.PLAYER_1:
                 state = State.PLAYER1_TURN;
-                gameTimer += Time.deltaTime;
+                Player1Turn();
+                NotPlayer2Turn();
+                playerTurnTimer += Time.deltaTime;
                 break;
 
             case State.PLAYER_2:
                 state = State.PLAYER2_TURN;
-                gameTimer += Time.deltaTime;
+                Player2Turn();
+                NotPlayer1Turn();
+                playerTurnTimer += Time.deltaTime;
                 break;
 
         }
+    }
+
+    public void Player1Turn()
+    {
+        PanelPlayer1UI.SetActive(false);
+        Time.timeScale = 1f;
+        pausedPlayer1 = false;
+    }
+
+    public void Player2Turn()
+    {
+        PanelPlayer2UI.SetActive(false);
+        Time.timeScale = 1f;
+        pausedPlayer2 = false;
+    }
+
+    public void NotPlayer1Turn()
+    {
+        PanelPlayer1UI.SetActive(true);
+        Time.timeScale = 0f;
+        pausedPlayer1 = true;
+    }
+
+    public void NotPlayer2Turn()
+    {
+        PanelPlayer2UI.SetActive(true);
+        Time.timeScale = 0f;
+        pausedPlayer2 = true;
     }
 }
