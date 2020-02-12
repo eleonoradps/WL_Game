@@ -34,11 +34,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    //public void LoadPlayScene()
-    //{
-    //    SceneManager.LoadScene("GameScene");
-    //    Time.timeScale = 1f;
-    //}
+    public void LoadPlayScene()
+    {
+        SceneManager.LoadScene("SceneLorna");
+        Time.timeScale = 1f;
+    }
 
 
     public void ContinuePlaying()
