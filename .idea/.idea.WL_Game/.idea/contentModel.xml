@@ -8,9 +8,10 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="ColorContainerActivator.cs" t="Include" />
+          <e p="Colors.cs" t="Include" />
           <e p="DragAndDropWillou.cs" t="Include" />
           <e p="MenuManager.cs" t="Include" />
-          <e p="PlayerTurnManager.cs" t="Include" />
+          <e p="PanelManager.cs" t="Include" />
           <e p="RandomWord.cs" t="Include" />
           <e p="ShapeContainerActivator.cs" t="Include" />
           <e p="UserInput.cs" t="Include" />

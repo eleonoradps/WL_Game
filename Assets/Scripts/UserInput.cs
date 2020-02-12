@@ -11,6 +11,8 @@ public class UserInput : MonoBehaviour
     string goodWord;
 
     [SerializeField] RandomWord randomWord;
+    
+    [SerializeField] GameObject winPanel;
 
     void Update()
     {
@@ -27,12 +29,7 @@ public class UserInput : MonoBehaviour
     {
         if (userWord == goodWord)
         {
-            Debug.Log("WIN");
-        }
-
-        else
-        {
-            Debug.Log("WRONG WORD");
+            winPanel.SetActive(true);
         }
     }
 }
