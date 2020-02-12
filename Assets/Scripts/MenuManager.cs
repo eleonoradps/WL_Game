@@ -28,11 +28,7 @@ public class MenuManager : MonoBehaviour
             }
         }
     }
-
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
+    
 
     public void LoadPlayScene()
     {
@@ -59,6 +55,7 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
 
     public void Quit()
     {
