@@ -9,16 +9,6 @@ public class ShapeContainerActivator : MonoBehaviour
 
     private bool isShapeContainerP1Active = false;
     private bool isShapeContainerP2Active = false;
-    void Start()
-    {
-        
-    }
-
-   
-    void Update()
-    {
-        
-    }
 
     public void ActivateP1ShapeContainer()
     {
