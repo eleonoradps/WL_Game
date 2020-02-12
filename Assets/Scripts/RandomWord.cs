@@ -10,6 +10,7 @@ public class RandomWord : MonoBehaviour
 
     int wordIndex;
     
+    
     [SerializeField] TextMeshProUGUI wordText;
     
     void Start()
@@ -18,5 +19,8 @@ public class RandomWord : MonoBehaviour
         wordText.text = words[wordIndex];
     }
 
- 
+    public string ReturnWord()
+    {
+        return words[wordIndex];
+    }
 }
